@@ -1,21 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+import PaginaContatos from './paginas/PaginaContatos';
+import PaginaDetalheContato from './paginas/PaginaDetalheContato';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+import api from './src/api';
+
+const Drawer = createDrawerNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <View >
+        <NavigationContainer style={{color:'blue'}} >
+          <Drawer.Navigator  initialRouteName="PaginaContatos">
+            <Drawer.Screen name="Contatos"  component={PaginaContatos} />
+            <Drawer.Screen name="PaginaDetalheContato" component={PaginaDetalheContato} />
+          </Drawer.Navigator>
+        </NavigationContainer>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#B0E0E6',
   },
 });
+
+
+
+export default App;
