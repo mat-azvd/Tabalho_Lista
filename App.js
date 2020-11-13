@@ -15,7 +15,7 @@ const Drawer = createDrawerNavigator();
 function App() {
   return (
     <View >
-        <NavigationContainer style={{color:'blue'}} >
+        <NavigationContainer>
           <Drawer.Navigator  initialRouteName="PaginaContatos">
             <Drawer.Screen name="Contatos"  component={PaginaContatos} />
             <Drawer.Screen name="PaginaDetalheContato" component={PaginaDetalheContato} />

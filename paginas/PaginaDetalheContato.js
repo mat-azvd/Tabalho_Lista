@@ -14,7 +14,7 @@ export default class PaginaDetalheContato extends Component{
   render() {
 
         
-    const { detalhes } = this.props.navigation.state.params
+    const { detalhes } = this.props.route.params
       
         return (
             <div>
