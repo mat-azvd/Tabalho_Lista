@@ -9,7 +9,7 @@ class PaginaContatos extends React.Component{
     static navigationOptions = {
         title: 'PaginaContato',
         headerStyle: {
-            backgroundColor: '#f4511e'
+        backgroundColor: '#f4511e'
         }
     };
 
