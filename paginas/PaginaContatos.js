@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import api from '../src/api';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
-import PaginaDetalheContato from './PaginaDetalheContato';
 import { NavigationContainer } from '@react-navigation/native';
 
 class PaginaContatos extends React.Component{
@@ -39,28 +38,17 @@ class PaginaContatos extends React.Component{
     render(){
 
         const {contatos} = this.state;
-
-        return(
-            
-            <View >
-                
-                <div>
-                <ScrollView style={styles.container}>
-                    {contatos.map(contato => (
-                        <li style={{listStyleType: 'none'}} key={contato.id}>
-                            
-                            <h2 style={{border:'double'}}>
-                                <TouchableOpacity style={{flexDirection: 'row', backgroundColor:'#5F9EA0'}} onPress={() => this.onItemPress(contato)}>
-                                    
-                                    <Image style={{height: 50, width: 50, borderRadius: 25}} source={{uri: contato.picture}}/>
-                                    <Text style={{fontSize:'120%'}}> <strong>{contato.name}</strong></Text>
-                                </TouchableOpacity>   
-                            </h2>
-                            
-                        </li>
+        return(           
+            <View style={styles.container}>    
+                <ScrollView >
+                    {contatos.map(contato => (                     
+                                <TouchableOpacity style={styles.contatoBox} key={contato.id} onPress={() => this.onItemPress(contato)}>                               
+                                    <Image style={styles.image} source={{uri: contato.picture}}/>
+                                    <Text style={styles.text}> {contato.name}</Text>
+                                </TouchableOpacity>                                       
                     ))}
                 </ScrollView>
-                </div>
+                
                 
             </View>
             
@@ -76,6 +64,34 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#B0E0E6',
+    },
+    text: {
+        fontSize: 30,
+        marginTop: 8,
+
+    },
+    contatoBox: {
+        flexDirection: 'row',
+        borderWidth:  1, 
+        borderStyle: 'solid',
+        borderRadius: 10, 
+        backgroundColor:'#5F9EA0',
+        marginTop: 5,
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 5,
+        
+    },
+    image: {
+        height: 50,
+        width: 50,
+        borderWidth:  3, 
+        
+        borderRadius: 25,
+        marginTop: 5,
+        marginLeft: 5,
+        marginRight: 15,
+        marginBottom: 5,
     },
   });
   

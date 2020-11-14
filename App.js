@@ -12,11 +12,12 @@ import api from './src/api';
 
 const Drawer = createDrawerNavigator();
 
+
 function App() {
   return (
-    <View >
-        <NavigationContainer>
-          <Drawer.Navigator  initialRouteName="PaginaContatos">
+    <View style={styles.container} >
+        <NavigationContainer >
+          <Drawer.Navigator drawerStyle={{backgroundColor: '#B0E0E6'}} initialRouteName="PaginaContatos">
             <Drawer.Screen name="Contatos"  component={PaginaContatos} />
             <Drawer.Screen name="PaginaDetalheContato" component={PaginaDetalheContato} />
           </Drawer.Navigator>
@@ -25,10 +26,13 @@ function App() {
   );
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#B0E0E6',
+    
+    //style={{backgroundColor:'#5F9EA0'}}
   },
 });
 
