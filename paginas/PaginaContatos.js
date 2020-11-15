@@ -7,7 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 class PaginaContatos extends React.Component{
 
     static navigationOptions = {
-        title: 'PaginaContato',
+        title: 'PaginaContatos',
         headerStyle: {
         backgroundColor: '#f4511e'
         }
@@ -20,6 +20,7 @@ class PaginaContatos extends React.Component{
        contatos: [],
     }
 }
+
 
 
     async componentDidMount(){
@@ -36,6 +37,7 @@ class PaginaContatos extends React.Component{
     
 
     render(){
+        
 
         const {contatos} = this.state;
         return(           
@@ -63,11 +65,12 @@ class PaginaContatos extends React.Component{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#B0E0E6',
+      backgroundColor: '#fff',
     },
     text: {
         fontSize: 30,
         marginTop: 8,
+        color: '#fff',
 
     },
     contatoBox: {
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
         borderWidth:  1, 
         borderStyle: 'solid',
         borderRadius: 10, 
-        backgroundColor:'#5F9EA0',
+        backgroundColor:'black',
         marginTop: 5,
         marginLeft: 10,
         marginRight: 10,
@@ -86,7 +89,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         borderWidth:  3, 
-        
+        borderColor: '#fff',
         borderRadius: 25,
         marginTop: 5,
         marginLeft: 5,

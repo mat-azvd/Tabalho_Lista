@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -17,14 +17,57 @@ function App() {
   return (
     <View style={styles.container} >
         <NavigationContainer >
-          <Drawer.Navigator drawerStyle={{backgroundColor: '#B0E0E6'}} initialRouteName="PaginaContatos">
-            <Drawer.Screen name="Contatos"  component={PaginaContatos} />
-            <Drawer.Screen name="PaginaDetalheContato" component={PaginaDetalheContato} />
+          <Drawer.Navigator drawerStyle={{backgroundColor: 'black'}} initialRouteName="PaginaContatos" 
+          
+          drawerContentOptions={{
+            activeTintColor: 'black',
+            activeBackgroundColor: 'grey',
+            inactiveTintColor: 'black',
+            inactiveBackgroundColor: 'white',
+            labelStyle:{
+              marginLeft:5
+            }
+          }}
+
+          >
+            <Drawer.Screen name="PaginaContatos"  component={PaginaContatos} 
+            options={{
+              title: 'Contatos',
+              headerStyle: {
+                backgroundColor: 'black',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }} />
+            <Drawer.Screen name="PaginaDetalheContato" component={PaginaDetalheContato}
+            options={{
+              title: 'Detalhes',
+              headerStyle: {
+                backgroundColor: 'black',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+              /*headerRight: () => (
+                <Button
+                  onPress={() => this.props.navigation.navigate('PaginaContatos')}
+                  title="Voltar"
+                  
+                />
+              ),
+              */
+              
+            }} 
+            />
           </Drawer.Navigator>
         </NavigationContainer>
       </View>
   );
 }
+
 
 
 
